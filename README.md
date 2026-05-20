@@ -33,6 +33,26 @@ Code and notes are organised by chapter as I work through the book.
 2. Clone this repository
 3. Navigate to the relevant chapter folder and follow the instructions in the book
 
+## Removing Docker Resources
+
+When you have completed all the chapters in the book, or you plan to use a local SQL Server or Azure SQL Database in the cloud instead of a SQL Server container, and you want to remove all the Docker resources that it uses, then either use the Docker Desktop user interface or follow these steps:
+
+1. Stop the `nw-container` container:
+   ```
+   docker stop nw-container
+   ```
+
+2. Remove the `nw-container` container:
+   ```
+   docker rm nw-container
+   ```
+   > **Warning!** Removing the container will delete all data inside it.
+
+3. Remove the image to release its disk space:
+   ```
+   docker rmi mcr.microsoft.com/mssql/server:2025-latest
+   ```
+
 ## Notes
 
 Personal notes and observations are kept alongside the code in each chapter folder.

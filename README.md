@@ -52,6 +52,14 @@ When you have completed all the chapters in the book, or you plan to use a local
    ```
    docker rmi mcr.microsoft.com/mssql/server:2025-latest
    ```
+## Updating EF Core
+If an old version is installed, then update the tool, as shown in the following command:
+dotnet tool update --global dotnet-ef
+
+## Removing EF Core
+You can also remove the tool, as shown in the following command:
+
+dotnet tool uninstall --global dotnet-ef
 
 ## Notes
 

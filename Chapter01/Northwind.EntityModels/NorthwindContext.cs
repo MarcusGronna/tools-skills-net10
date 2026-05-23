@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
 
 namespace Northwind.EntityModels;
 
@@ -66,9 +66,30 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Territory> Territories { get; set; }
 
-    protected override void OnConfiguring()
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        // If not already configured by a client project. For example,
+        // a client project could use AddNorthwindContext to override
+        // the database connection string.
+        if (!optionsBuilder.IsConfigured)
+        {
+            SqlConnectionStringBuilder builder = new();
+            builder.DataSource = "tcp:127.0.0.1,1433" // SQL Server in container.
+            builder.InitialCatalog = "Northwind";
+            builder.TrustServerCertificate = true;
+            builder.MultipleActiveResultSets = true;
 
+            // Because we want to fail faster. Default is 15 seconds.
+            builder.ConnectTimeout = 3;
+
+            // If using Windows Integrated authentication.
+            // builder.IntegratedSecurity = true;
+            // If using SQL Server authentication.
+            builder.UserID = Environment.GetEnvironmentVariable("MY_SQL_USR");
+            builder.Password = Environment.GetEnvironmentVariable("MY_SQL_PWD");
+
+            optionsBuilder.UseSqlServer(builder.ConnectionString);
+        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

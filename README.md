@@ -33,6 +33,8 @@ Code and notes are organised by chapter as I work through the book.
 2. Clone this repository
 3. Navigate to the relevant chapter folder and follow the instructions in the book
 
+## Start docker container with database
+
 ## Removing Docker Resources
 
 When you have completed all the chapters in the book, or you plan to use a local SQL Server or Azure SQL Database in the cloud instead of a SQL Server container, and you want to remove all the Docker resources that it uses, then either use the Docker Desktop user interface or follow these steps:

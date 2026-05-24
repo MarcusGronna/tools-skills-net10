@@ -74,7 +74,7 @@ public partial class NorthwindContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             SqlConnectionStringBuilder builder = new();
-            builder.DataSource = "tcp:127.0.0.1,1433" // SQL Server in container.
+            builder.DataSource = "tcp:127.0.0.1,1433"; // SQL Server in container.
             builder.InitialCatalog = "Northwind";
             builder.TrustServerCertificate = true;
             builder.MultipleActiveResultSets = true;

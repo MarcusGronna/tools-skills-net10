@@ -23,7 +23,7 @@
   <ItemGroup Label="Chapter 1 Introducing Tools and Skills for .NET">
     <!-- To use the .NET 11 preview packages, change the versions below from $(Net10) to $(Net11). -->
     <!-- Your projects should target net11.0 and you must install .NET 11 Preview SDK. -->
-    
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(Net10)" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(Net10)" />
 

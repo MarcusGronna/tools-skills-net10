@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore; // UseSqlServer
 using Microsoft.Extensions.DependencyInjection; // IServiceCollection
 
-namespace Northwind.DataContext;
+namespace Northwind.EntityModels;
 
-public class NorthwindContextExtensions
+public static class NorthwindContextExtensions
 {
     /// <summary>
     /// Adds NorthwindContext to the specified IServiceCollection. 
@@ -41,14 +41,13 @@ public class NorthwindContextExtensions
 
             // Log to console when executing EF Core commands.
             options.LogTo(Console.WriteLine, new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
-        })
+        },
 
         // Register with a transient lifetime to avoid concurrency issues with Blazor Server projects.
-        contextLifetime: ServiceLifetime.Transient,
+    contextLifetime: ServiceLifetime.Transient,
         optionsLifetime: ServiceLifetime.Transient);
 
         return services;
-        }
     }
-    
 }
+

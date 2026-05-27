@@ -19,4 +19,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+  </ItemGroup>
+
 </Project>

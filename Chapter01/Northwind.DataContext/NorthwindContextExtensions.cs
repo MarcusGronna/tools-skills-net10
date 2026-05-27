@@ -13,7 +13,7 @@ public static class NorthwindContextExtensions
     /// <param name="services">The service collection.</param>
     /// <param name="connectionString">Set to override the default.</param>
     /// <returns>An IServiceCollection that can be used to add more services.</returns>
-    public static IServiceCollection AddNorthwindContext(this IServiceCollection services, string connectionString = null)
+    public static IServiceCollection AddNorthwindContext(this IServiceCollection services, string? connectionString = null)
     {
         if (connectionString == null)
         {
@@ -44,7 +44,7 @@ public static class NorthwindContextExtensions
         },
 
         // Register with a transient lifetime to avoid concurrency issues with Blazor Server projects.
-    contextLifetime: ServiceLifetime.Transient,
+        contextLifetime: ServiceLifetime.Transient,
         optionsLifetime: ServiceLifetime.Transient);
 
         return services;

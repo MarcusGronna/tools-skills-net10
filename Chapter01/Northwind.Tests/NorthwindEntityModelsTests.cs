@@ -1,10 +1,14 @@
-﻿namespace Northwind.Tests;
+﻿using Northwind.EntityModels; // To use NorthwindContext and Product.
 
-public class UnitTest1
+namespace Northwind.Tests;
+
+
+public class NorthwindEntityModelsTests
 {
     [Fact]
-    public void Test1()
+    public void DatabaseContextTest()
     {
-
+        using NorthwindContext db = new();
+        Assert.True(db.Database.CanConnect());
     }
 }

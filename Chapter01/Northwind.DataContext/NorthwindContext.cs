@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
 
 namespace Northwind.EntityModels;
 
@@ -9,6 +7,10 @@ public partial class NorthwindContext : DbContext
 {
     public NorthwindContext(DbContextOptions<NorthwindContext> options)
         : base(options)
+    {
+    }
+    public NorthwindContext()
+        : base()
     {
     }
 

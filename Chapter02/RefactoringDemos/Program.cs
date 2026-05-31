@@ -1,1 +1,6 @@
-﻿WriteLine("Hello, World!");
+﻿Product product = new()
+{
+    description = "Seafood"
+};
+
+WriteLine(product.description);

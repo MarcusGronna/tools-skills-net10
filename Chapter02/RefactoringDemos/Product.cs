@@ -12,4 +12,9 @@
     }
 
     public string? Description { get => description; set => description = value; }
+
+    public void Process(string name)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name, $"'{nameof(name)}' cannot be null or whitespace.");
+    }
 }

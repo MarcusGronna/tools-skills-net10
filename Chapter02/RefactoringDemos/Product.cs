@@ -1,6 +1,15 @@
-﻿using System;
-
-public class Product
+﻿public class Product : IProduct
 {
-    public string? description;
+    private string? description;
+
+    public Product()
+    {
+    }
+
+    public Product(string? description)
+    {
+        Description = description;
+    }
+
+    public string? Description { get => description; set => description = value; }
 }

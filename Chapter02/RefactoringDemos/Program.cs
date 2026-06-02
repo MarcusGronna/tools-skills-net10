@@ -1,6 +1,6 @@
 ﻿Product product = new()
 {
-    description = "Seafood"
+    Description = "Seafood"
 };
 
-WriteLine(product.description);
+WriteLine(product.Description);

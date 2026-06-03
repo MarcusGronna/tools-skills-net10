@@ -1,4 +1,6 @@
-﻿public class Product : IProduct
+﻿using System.Xml.Linq;
+
+public class Product : IProduct
 {
     private string? description;
 

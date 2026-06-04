@@ -1,1 +1,3 @@
-﻿WriteLine(CurrentDirectory);
+﻿ConfigureConsole();
+
+WriteLine(CurrentDirectory);

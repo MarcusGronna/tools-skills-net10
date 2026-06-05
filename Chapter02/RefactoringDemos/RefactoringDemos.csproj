@@ -12,4 +12,12 @@
 		<Using Include="System.Console" Static="true" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <EditorConfigFiles Remove="C:\Users\mglin\OneDrive\Skrivbord\Allt\Programmering\Visual-Studio-Solutions\tools-skills-net10\Chapter02\RefactoringDemos\.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="C:\Users\mglin\OneDrive\Skrivbord\Allt\Programmering\Visual-Studio-Solutions\tools-skills-net10\Chapter02\RefactoringDemos\.editorconfig" />
+	</ItemGroup>
+
 </Project>
